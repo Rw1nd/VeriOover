@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+
+import argparse
+import sys
+import os
+VERSION = "1.2"
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + "/src")
+
+ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
+LIB_PATH = ROOT_PATH + '/lib/'
+BIN_PATH = ROOT_PATH + "/bin/"
+TMP_PATH = "/tmp/verioover/"
+
+folder = os.path.exists(TMP_PATH)
+if not folder:
+    os.makedirs(TMP_PATH)
+
+from VeriOover import *
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Overflow Verifier.\n ")
+
+    parser.add_argument("--file", type=str ,help="Input file path")
+    parser.add_argument("--version", action='version', version="version "+ VERSION)
+
+    args = parser.parse_args()
+
+    if args.file != None:
+        RunVeri(args.file)
+    else:
+        print("usage: VeriOover [-h] [--file FILE]")
