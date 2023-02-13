@@ -27,7 +27,7 @@ for i in TestDir:
             myml = yaml.load(yml.read(), Loader=yaml.Loader)
             TargetRes = myml["properties"][0]["expected_verdict"]
             print(cfile)
-            work = subprocess.Popen(["/usr/bin/time","./verioover", "--file", cfile], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            work = subprocess.Popen(["/usr/bin/time","./VeriOover", "--file", cfile], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             subprocess.Popen.wait(work)
             (VeriRes, timelog) = work.communicate()
             VeriRes = str(VeriRes, 'utf-8')
