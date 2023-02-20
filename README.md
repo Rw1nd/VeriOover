@@ -54,4 +54,4 @@ optional arguments:
 
 ## Authors
 
-This project is the implementation of the paper VeriOover: A Verifier for Detecting Integer Overflow by Loop Abstraction by Jian Fang, Haipeng Qu, et al.
+This project is the implementation of the paper VeriOover: A Verifier for Detecting Integer Overflow by Loop Abstraction by Jian Fang, Haipeng Qu.
